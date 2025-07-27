@@ -3,6 +3,9 @@
 
 Welcome to the build guide for transforming your humble Geeetech M1 into a lean, mean, Klipper-powered printing machine. This README outlines the upgrades, installation steps, and configuration notes for replicating or understanding this custom setup.
 
+Help me fund a 3D Scanner so I don't have to squeeze what I can out of polycam and my razor phone!
+https://ko-fi.com/0dysseusrex
+
 ## 🧰 Overview
 
 This project includes the following enhancements:
