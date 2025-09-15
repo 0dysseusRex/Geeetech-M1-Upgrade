@@ -7,6 +7,85 @@ Welcome to the build guide for transforming your humble Geeetech M1 into a lean,
 
 ---
 
+<details>
+<summary>📊 <strong>Project Completion Tracker</strong> — 32% Overall — Click to expand</summary>
+
+### 🔧 Printhead Re-design — 90%  
+`█████████░`  
+**✅ Completed:**  
+- A1 Mini Hotend  
+- Probe mounting location  
+- Microprobe mount  
+- Fan mounts  
+- Cable guides  
+
+**📝 To Do:**  
+- Redesign bottom screw mounts to point forwards  
+
+---
+
+### 🏗️ Gantry Re-design — 100%  
+`██████████`  
+- Universal screw holes for custom MCU mounts ✅  
+
+---
+
+### 🧩 MCU / Breakout Board Mount — 100%  
+`██████████`  
+- Fully installed ✅  
+
+---
+
+### ⚙️ Electronics Mount — 0%  
+`░░░░░░░░░░`  
+- SKR Pico Mount ❌  
+- Pi Zero 2W Mount ❌  
+- Breakout Board Mount ❌  
+- Knomi Mount ❌  
+- E-stop Mount ❌  
+
+---
+
+### 🔌 PSU Mount — 0%  
+`░░░░░░░░░░`  
+- Not yet started ❌  
+
+---
+
+### 💻 Software — 0%  
+`░░░░░░░░░░`  
+- Clone Simple AF Repo ❌  
+- Custom `printer.cfg` ❌  
+- Automate setup via Simple AF ❌  
+- Test functionality ❌  
+
+---
+
+### 🧪 Testing — 0%  
+`░░░░░░░░░░`  
+- Initial printer function tests ❌  
+- PID tuning ❌  
+- Input shaper graphs ❌  
+- First test prints ❌  
+- Speed tests ❌  
+- Dial-in settings ❌  
+
+---
+
+### 🎬 Video Editing — 0%  
+`░░░░░░░░░░`  
+- Not yet started ❌  
+
+---
+
+### 🌐 Publish & Go Live — 0%  
+`░░░░░░░░░░`  
+- Awaiting completion ❌  
+
+</details>
+
+---
+
 ## 🧰 Project Overview
 
 This upgrade journey includes:
@@ -82,85 +161,6 @@ This upgrade journey includes:
 - LED lighting for enclosure ambiance  
 - Custom magnetic toolhead plate for quick swaps  
 - Sound-dampened enclosure for stealthy prints
-
----
-
-<details>
-<summary>📊 <strong>Project Completion Tracker</strong> — Click to expand</summary>
-
-### 🔧 Printhead Re-design — 90%  
-`█████████░`  
-**✅ Completed:**  
-- A1 Mini Hotend  
-- Probe mounting location  
-- Microprobe mount  
-- Fan mounts  
-- Cable guides  
-
-**📝 To Do:**  
-- Redesign bottom screw mounts to point forwards  
-
----
-
-### 🏗️ Gantry Re-design — 100%  
-`██████████`  
-- Universal screw holes for custom MCU mounts ✅  
-
----
-
-### 🧩 MCU / Breakout Board Mount — 100%  
-`██████████`  
-- Fully installed ✅  
-
----
-
-### ⚙️ Electronics Mount — 0%  
-`░░░░░░░░░░`  
-- SKR Pico Mount ❌  
-- Pi Zero 2W Mount ❌  
-- Breakout Board Mount ❌  
-- Knomi Mount ❌  
-- E-stop Mount ❌  
-
----
-
-### 🔌 PSU Mount — 0%  
-`░░░░░░░░░░`  
-- Not yet started ❌  
-
----
-
-### 💻 Software — 0%  
-`░░░░░░░░░░`  
-- Clone Simple AF Repo ❌  
-- Custom `printer.cfg` ❌  
-- Automate setup via Simple AF ❌  
-- Test functionality ❌  
-
----
-
-### 🧪 Testing — 0%  
-`░░░░░░░░░░`  
-- Initial printer function tests ❌  
-- PID tuning ❌  
-- Input shaper graphs ❌  
-- First test prints ❌  
-- Speed tests ❌  
-- Dial-in settings ❌  
-
----
-
-### 🎬 Video Editing — 0%  
-`░░░░░░░░░░`  
-- Not yet started ❌  
-
----
-
-### 🌐 Publish & Go Live — 0%  
-`░░░░░░░░░░`  
-- Awaiting completion ❌  
-
-</details>
 
 ---
 
