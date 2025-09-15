@@ -1,11 +1,9 @@
-
-
 🛠️ Geeetech M1 Klipperization & Upgrade Project
+
 Welcome to the build guide for transforming your humble Geeetech M1 into a lean, mean, Klipper-powered printing machine. This README outlines the upgrades, installation steps, and configuration notes for replicating or understanding this custom setup.
+
 💡 Help me fund a 3D scanner so I can stop squeezing magic out of Polycam and a Razor phone.
 ko-fi.com/0dysseusrex
-
-
 
 🧰 Project Overview
 This upgrade journey includes:
