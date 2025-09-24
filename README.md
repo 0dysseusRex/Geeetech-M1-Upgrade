@@ -1,6 +1,6 @@
 # 🛠️ Geeetech M1 Klipperization & Upgrade Project
 
-Welcome to the build guide for transforming your humble Geeetech M1 into a lean, mean, Klipper-powered printing machine. This README outlines the upgrades, installation steps, and configuration notes for replicating or understanding this custom setup.
+Welcome to the build guide for transforming your humble Geeetech M1 into a lean, mean, Klipper-powered printing machine. This README outlines the upgrades, installation steps, and configuration notes for the project.
 
 > 💡 Help me fund a 3D scanner so I can stop squeezing magic out of Polycam and a Razor phone.  
 > [![Support Me on Ko-fi](https://img.shields.io/badge/Support%20Me%20on-Ko--fi-ff5f5f?logo=ko-fi&logoColor=white&style=flat-square)](https://ko-fi.com/0dysseusrex)
@@ -8,9 +8,16 @@ Welcome to the build guide for transforming your humble Geeetech M1 into a lean,
 ---
 
 <details>
-<summary>📊 <strong>Project Completion Tracker</strong> — 32% Overall — Click to expand</summary>
+<summary>📊 <strong>Project Completion Tracker</strong> — 40% Overall (Weighted by Major Milestones) — Click to expand</summary>
 
-### 🔧 Printhead Re-design — 90%  
+> **Note:** Project completion is calculated by assigning weights to major milestones as follows:
+> - Printhead Re-design: 30%
+> - Gantry Re-design: 30%
+> - Electronics Mount: 20%
+> - Software: 20%
+> Weighted progress is shown below. All other tasks are tracked for transparency but do not affect the overall percentage.
+
+### 🔧 Printhead Re-design — 90% (27% of total)
 `█████████░`  
 **✅ Completed:**  
 - A1 Mini Hotend  
@@ -24,19 +31,13 @@ Welcome to the build guide for transforming your humble Geeetech M1 into a lean,
 
 ---
 
-### 🏗️ Gantry Re-design — 100%  
+### 🏗️ Gantry Re-design — 100% (30% of total)
 `██████████`  
 - Universal screw holes for custom MCU mounts ✅  
 
 ---
 
-### 🧩 MCU / Breakout Board Mount — 100%  
-`██████████`  
-- Fully installed ✅  
-
----
-
-### ⚙️ Electronics Mount — 0%  
+### ⚙️ Electronics Mount — 0% (0% of total)
 `░░░░░░░░░░`  
 - SKR Pico Mount ❌  
 - Pi Zero 2W Mount ❌  
@@ -46,13 +47,7 @@ Welcome to the build guide for transforming your humble Geeetech M1 into a lean,
 
 ---
 
-### 🔌 PSU Mount — 0%  
-`░░░░░░░░░░`  
-- Not yet started ❌  
-
----
-
-### 💻 Software — 0%  
+### 💻 Software — 0% (0% of total)
 `░░░░░░░░░░`  
 - Clone Simple AF Repo ❌  
 - Custom `printer.cfg` ❌  
@@ -61,7 +56,19 @@ Welcome to the build guide for transforming your humble Geeetech M1 into a lean,
 
 ---
 
-### 🧪 Testing — 0%  
+### 🧩 MCU / Breakout Board Mount — 100%
+`██████████`  
+- Fully installed ✅  
+
+---
+
+### 🔌 PSU Mount — 0%
+`░░░░░░░░░░`  
+- Not yet started ❌  
+
+---
+
+### 🧪 Testing — 0%
 `░░░░░░░░░░`  
 - Initial printer function tests ❌  
 - PID tuning ❌  
@@ -72,13 +79,13 @@ Welcome to the build guide for transforming your humble Geeetech M1 into a lean,
 
 ---
 
-### 🎬 Video Editing — 0%  
+### 🎬 Video Editing — 0%
 `░░░░░░░░░░`  
 - Not yet started ❌  
 
 ---
 
-### 🌐 Publish & Go Live — 0%  
+### 🌐 Publish & Go Live — 0%
 `░░░░░░░░░░`  
 - Awaiting completion ❌  
 
