@@ -54,7 +54,7 @@ The finished `STL Files/Electronics Mount/Pi Mount.stl` fits the previous Raspbe
 `░░░░░░░░░░`  
 - Flash the Fly-bian 1.0 Simple-AF image on the Fly Lite 2.1 ❌  
 - Draft `printer.cfg` written, not tested on the machine ❌  
-- Finish host setup with `fly-start` ❌  
+- Run the Simple-AF install command in the installation section ❌  
 - Test functionality ❌  
 
 ---
@@ -129,7 +129,13 @@ This upgrade journey includes:
   - Before the first power-on, edit `fly-start.txt` on the `FLY-SETUP` volume (2.4 GHz Wi-Fi, locale, root password, sudo user). Steps: [Fly-bian Simple-AF how-to](https://github.com/0dysseusRex/fly-bian/blob/main/docs/howto-simpleaf.md)
   - Power the host from its own 5 V supply. Mellow says the Fly-Pi-lite2.1 must not be powered from the printer mainboard
   - Fit the IPEX antenna. Onboard Wi-Fi is 2.4 GHz only
-  - After SSH login, run `fly-start`. Printer and probe choices follow [Simple-AF for RPi](https://pellcorp.github.io/creality-wiki/rpi/). A first-draft [`printer.cfg`](printer.cfg) is in this repo; it is not calibrated
+  - After SSH login, `~/pellcorp` is already on the card. [Simple-AF for RPi](https://pellcorp.github.io/creality-wiki/rpi/) accepts a custom printer file as `--printer` (a GitHub file URL or a local path) and the probe as `--probe`. This machine is not one of the predefined printers, so there is no `--mount`. The draft [`printer.cfg`](printer.cfg) is that file. Run:
+
+    ```
+    ~/pellcorp/installer.sh --install --printer https://github.com/0dysseusRex/Geeetech-M1-Upgrade/blob/main/printer.cfg --probe microprobe
+    ```
+
+    The same line can be `INSTALL_CMD=` in `fly-start.txt` on the `FLY-SETUP` volume before the first boot. That is the hook in the [Fly-bian Simple-AF how-to](https://github.com/0dysseusRex/fly-bian/blob/main/docs/howto-simpleaf.md). The installer rewrites the GitHub URL to the raw file. `printer.cfg` is still a draft
   - The SKR Pico stays the MCU and still connects over USB. No Fly Lite GPIO pinout is added here
   - Wire power and comms with care—use ferrules for safety and reliability
 
@@ -150,7 +156,7 @@ This upgrade journey includes:
 
 ## 🧠 Configuration Notes
 
-- [`printer.cfg`](printer.cfg) is a draft for the SKR Pico MCU plus a BTT Microprobe. The Fly Lite 2.1 is the host. Its only documented Klipper GPIO is the KPPM pin, and this config does not load that pin. Leave [`adxl345.cfg`](adxl345.cfg) commented out until the USB accelerometer is plugged in
+- [`printer.cfg`](printer.cfg) is the Simple-AF `--printer` file for the SKR Pico MCU. Probe and mesh values are in its `-- microprobe.cfg` section so the installer keeps the SKR Pico probe pins. Simple-AF's own `START_PRINT` homes with `G28` on the mechanical endstops, then meshes. The Fly Lite 2.1 is the host. Its only documented Klipper GPIO is the KPPM pin, and this config does not load that pin. [`adxl345.cfg`](adxl345.cfg) is not part of that install; include it only while the USB accelerometer is plugged in
 - Run PID tuning for hotend and bed  
 - Enable Input Shaping with accelerometer (optional but recommended)  
 - View the camera stream in Fluidd or Mainsail on the Fly Lite
@@ -159,7 +165,7 @@ This upgrade journey includes:
 
 ## ✨ Acknowledgments
 
-Big thanks to the Klipper community, BTT engineers, Pellcorp ([Simple AF](https://pellcorp.github.io/creality-wiki/)), Mellow for the [Fly-Pi-lite2.1](https://mellow.klipper.cn/en/docs/ProductDoc/SBC/fly-lite/lite2.1/), the [Fly-bian](https://github.com/0dysseusRex/fly-bian) image, and all the DIYers who turn retro machines into futuristic wonders.
+Big thanks to the Klipper community, BTT engineers, Pellcorp ([Simple AF](https://pellcorp.github.io/creality-wiki/)), Mellow for the [Fly-Pi-lite2.1](https://mellow.klipper.cn/en/docs/ProductDoc/SBC/fly-lite/lite2.1/), the [Fly-bian](https://github.com/0dysseusRex/fly-bian) image, and [adamrodgers/geeetech-m1s-klipper](https://github.com/adamrodgers/geeetech-m1s-klipper) for the stock M1S X/Y/Z motor steps, travel, homing direction, and cartesian kinematics in `printer.cfg`. That project keeps the original M1S board, so only those motion numbers were used here. And thanks to all the DIYers who turn retro machines into futuristic wonders.
 
 ---
 
