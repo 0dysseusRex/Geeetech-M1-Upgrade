@@ -161,6 +161,10 @@ This upgrade journey includes:
 
 Big thanks to the Klipper community, BTT engineers, Pellcorp ([Simple AF](https://pellcorp.github.io/creality-wiki/)), Mellow for the [Fly-Pi-lite2.1](https://mellow.klipper.cn/en/docs/ProductDoc/SBC/fly-lite/lite2.1/), the [Fly-bian](https://github.com/0dysseusRex/fly-bian) image, and all the DIYers who turn retro machines into futuristic wonders.
 
+## Credits
+
+X/Y/Z steps, travel, and homing direction in `printer.cfg` come from the stock M1S Marlin dump published by [adamrodgers/geeetech-m1s-klipper](https://github.com/adamrodgers/geeetech-m1s-klipper). That project keeps the original M1S board. This one uses a Fly Lite 2.1 host and an SKR Pico, so only the motion numbers were taken, not their pin map.
+
 ---
 
 > 🧠 Print smarter, not harder.  
