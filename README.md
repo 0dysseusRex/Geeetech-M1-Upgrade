@@ -132,7 +132,7 @@ This upgrade journey includes:
   - After SSH login, `~/pellcorp` is already on the card. [Simple-AF for RPi](https://pellcorp.github.io/creality-wiki/rpi/) accepts a custom printer file as `--printer` (a GitHub file URL or a local path) and the probe as `--probe`. This machine is not one of the predefined printers, so there is no `--mount`. The draft [`printer.cfg`](printer.cfg) is that file. Run:
 
     ```
-    ~/pellcorp/installer.sh --install --printer https://github.com/0dysseusRex/Geeetech-M1-Upgrade/blob/cursor/fly-lite-21-controller-0fcf/printer.cfg --probe microprobe
+    ~/pellcorp/installer.sh --install --printer https://github.com/0dysseusRex/Geeetech-M1-Upgrade/blob/main/printer.cfg --probe microprobe
     ```
 
     The same line can be `INSTALL_CMD=` in `fly-start.txt` on the `FLY-SETUP` volume before the first boot. That is the hook in the [Fly-bian Simple-AF how-to](https://github.com/0dysseusRex/fly-bian/blob/main/docs/howto-simpleaf.md). The installer rewrites the GitHub URL to the raw file. `printer.cfg` is still a draft
@@ -166,10 +166,6 @@ This upgrade journey includes:
 ## ✨ Acknowledgments
 
 Big thanks to the Klipper community, BTT engineers, Pellcorp ([Simple AF](https://pellcorp.github.io/creality-wiki/)), Mellow for the [Fly-Pi-lite2.1](https://mellow.klipper.cn/en/docs/ProductDoc/SBC/fly-lite/lite2.1/), the [Fly-bian](https://github.com/0dysseusRex/fly-bian) image, and [adamrodgers/geeetech-m1s-klipper](https://github.com/adamrodgers/geeetech-m1s-klipper) for the stock M1S X/Y/Z motor steps, travel, homing direction, and cartesian kinematics in `printer.cfg`. That project keeps the original M1S board, so only those motion numbers were used here. And thanks to all the DIYers who turn retro machines into futuristic wonders.
-
-## Credits
-
-X/Y/Z steps, travel, and homing direction in `printer.cfg` come from the stock M1S Marlin dump published by [adamrodgers/geeetech-m1s-klipper](https://github.com/adamrodgers/geeetech-m1s-klipper). That project keeps the original M1S board. This one uses a Fly Lite 2.1 host and an SKR Pico, so only the motion numbers were taken, not their pin map.
 
 ---
 
