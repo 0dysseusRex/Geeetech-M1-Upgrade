@@ -41,18 +41,20 @@ Welcome to the build guide for transforming your humble Geeetech M1 into a lean,
 `██████░░░░`  
 **✅ Completed:**  
 - SKR Pico Mount ✔️  
-- Pi Zero 2W Mount ✔️  
 **📝 To Do:**  
+- Fly Lite 2.1 mount ❌  
 - Knomi Mount ❌  
 - E-stop Mount ❌  
+
+The finished `STL Files/Electronics Mount/Pi Mount.stl` fits the previous Raspberry Pi Zero 2W host. It is not a verified Mellow Fly Lite 2.1 mount, so that STL is unchanged. The 60% figure above still counts that Pi mount.  
 
 ---
 
 ### 💻 Software — 0% (0% of total)
 `░░░░░░░░░░`  
-- Clone Simple AF Repo ❌  
+- Flash the Fly-bian 1.0 Simple-AF image on the Fly Lite 2.1 ❌  
 - Custom `printer.cfg` ❌  
-- Automate setup via Simple AF ❌  
+- Finish host setup with `fly-start` ❌  
 - Test functionality ❌  
 
 ---
@@ -92,14 +94,15 @@ Welcome to the build guide for transforming your humble Geeetech M1 into a lean,
 
 This upgrade journey includes:
 
-- **Mainboard**: BTT SKR Pico running *Simple AF Klipper*
-- **Controller**: Raspberry Pi Zero 2W
+- **Mainboard**: BTT SKR Pico (Klipper MCU)
+- **Controller**: [Mellow Fly-Pi-lite2.1](https://mellow.klipper.cn/en/docs/ProductDoc/SBC/fly-lite/lite2.1/) (Fly Lite 2.1), the Klipper host
+- **Host image**: [Fly-bian 1.0 Simple-AF](https://github.com/0dysseusRex/fly-bian/releases/tag/v1.0) — `Fly-bian-1.0_Fly-Lite-2.1_Simple-AF-0d21afe.img.xz`. This is unofficial Armbian/Debian from [fly-bian](https://github.com/0dysseusRex/fly-bian), not Mellow FlyOS
 - **Power Supply**: Internal 100W unit for compact, clean power delivery
 - **Custom Printhead Assembly**:
   - A1 Mini hotend for improved thermal performance  
   - Creality K1 extruder for smoother filament feed  
   - Microprobe sensor for reliable bed leveling
-- **Streaming Camera**: Live monitoring via USB/CSI camera
+- **Streaming Camera**: Live monitoring via a USB camera on the Fly Lite
 
 ---
 
@@ -107,22 +110,27 @@ This upgrade journey includes:
 
 | Component         | Model/Description         |
 |------------------|---------------------------|
-| Mainboard        | BTT SKR Pico              |
-| Firmware         | Simple AF Klipper         |
-| Controller       | Raspberry Pi Zero 2W      |
+| Mainboard        | BTT SKR Pico (Klipper MCU) |
+| Controller       | Mellow Fly-Pi-lite2.1 (Fly Lite 2.1) |
+| Host image       | Fly-bian 1.0 Simple-AF (`Fly-bian-1.0_Fly-Lite-2.1_Simple-AF-0d21afe.img.xz`) |
 | Power Supply     | Internal 100W             |
 | Hotend           | A1 Mini                   |
 | Extruder         | Creality K1               |
 | Bed Leveling     | Microprobe sensor         |
-| Streaming Camera | USB/CSI compatible        |
+| Streaming Camera | USB (Fly Lite USB-A; no CSI connector on this host) |
 
 ---
 
 ## 🛠️ Installation Highlights
 
-- **Mainboard & Pi Setup**  
-  - Flash Klipper on the Pi Zero 2W using the Simple AF config  
-  - Connect Pi to SKR Pico via USB  
+- **Controller (Fly Lite 2.1)**  
+  - Flash only the Simple-AF card: [Fly-bian-1.0_Fly-Lite-2.1_Simple-AF-0d21afe.img.xz](https://github.com/0dysseusRex/fly-bian/releases/download/v1.0/Fly-bian-1.0_Fly-Lite-2.1_Simple-AF-0d21afe.img.xz) (SHA256 `3523ba04239469a7654b9d3b5ce8d07d9bf0d138a92ea3c833cd38d0f7c9e470`). Do not flash the Base or KIAUH image, FlyOS, or Raspberry Pi OS
+  - Mellow specifies a MicroSD of 16–128 GB, speed class C10 or higher. The board has no eMMC
+  - Before the first power-on, edit `fly-start.txt` on the `FLY-SETUP` volume (2.4 GHz Wi-Fi, locale, root password, sudo user). Steps: [Fly-bian Simple-AF how-to](https://github.com/0dysseusRex/fly-bian/blob/main/docs/howto-simpleaf.md)
+  - Power the host from its own 5 V supply. Mellow says the Fly-Pi-lite2.1 must not be powered from the printer mainboard
+  - Fit the IPEX antenna. Onboard Wi-Fi is 2.4 GHz only
+  - After SSH login, run `fly-start`. Printer and probe choices follow [Simple-AF for RPi](https://pellcorp.github.io/creality-wiki/rpi/); this repo does not ship a Geeetech M1 `printer.cfg`
+  - The SKR Pico stays the MCU and still connects over USB. No Fly Lite GPIO pinout is added here
   - Wire power and comms with care—use ferrules for safety and reliability
 
 - **Printhead Upgrade**  
@@ -135,23 +143,23 @@ This upgrade journey includes:
   - Ensure tidy cable management and proper airflow
 
 - **Camera Streaming**  
-  - Connect camera to Pi  
-  - Configure MJPG-streamer or Moonraker for live feed access
+  - Connect a USB camera to a Fly Lite USB-A port. A CSI camera connector is not listed on the Fly-Pi-lite2.1
+  - After Crowsnest is installed, `fly-crowsnest-add-cams` adds the camera. Fluidd and Mainsail are the web UIs on this image
 
 ---
 
 ## 🧠 Configuration Notes
 
-- Use a `printer.cfg` tailored for SKR Pico + Microprobe  
+- Use a `printer.cfg` tailored for SKR Pico + Microprobe. The Fly Lite is the host; it does not replace the SKR Pico pinout
 - Run PID tuning for hotend and bed  
 - Enable Input Shaping with accelerometer (optional but recommended)  
-- View camera stream via OctoDash, Fluidd, or Mainsail
+- View the camera stream in Fluidd or Mainsail on the Fly Lite
 
 ---
 
 ## ✨ Acknowledgments
 
-Big thanks to the Klipper community, BTT engineers, Pellcorp ([Simple AF](https://pellcorp.github.io/creality-wiki/)), and all the DIYers who turn retro machines into futuristic wonders.
+Big thanks to the Klipper community, BTT engineers, Pellcorp ([Simple AF](https://pellcorp.github.io/creality-wiki/)), Mellow for the [Fly-Pi-lite2.1](https://mellow.klipper.cn/en/docs/ProductDoc/SBC/fly-lite/lite2.1/), the [Fly-bian](https://github.com/0dysseusRex/fly-bian) image, and all the DIYers who turn retro machines into futuristic wonders.
 
 ---
 
