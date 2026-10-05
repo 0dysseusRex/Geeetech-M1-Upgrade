@@ -165,7 +165,7 @@ This upgrade journey includes:
 
 ## ✨ Acknowledgments
 
-Big thanks to the Klipper community, BTT engineers, Pellcorp ([Simple AF](https://pellcorp.github.io/creality-wiki/)), Mellow for the [Fly-Pi-lite2.1](https://mellow.klipper.cn/en/docs/ProductDoc/SBC/fly-lite/lite2.1/), the [Fly-bian](https://github.com/0dysseusRex/fly-bian) image, and all the DIYers who turn retro machines into futuristic wonders.
+Big thanks to the Klipper community, BTT engineers, Pellcorp ([Simple AF](https://pellcorp.github.io/creality-wiki/)), Mellow for the [Fly-Pi-lite2.1](https://mellow.klipper.cn/en/docs/ProductDoc/SBC/fly-lite/lite2.1/), the [Fly-bian](https://github.com/0dysseusRex/fly-bian) image, and [adamrodgers/geeetech-m1s-klipper](https://github.com/adamrodgers/geeetech-m1s-klipper) for the stock M1S X/Y/Z motor steps, travel, homing direction, and cartesian kinematics in `printer.cfg`. That project keeps the original M1S board, so only those motion numbers were used here. And thanks to all the DIYers who turn retro machines into futuristic wonders.
 
 ## Credits
 
