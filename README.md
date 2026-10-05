@@ -53,7 +53,7 @@ The finished `STL Files/Electronics Mount/Pi Mount.stl` fits the previous Raspbe
 ### 💻 Software — 0% (0% of total)
 `░░░░░░░░░░`  
 - Flash the Fly-bian 1.0 Simple-AF image on the Fly Lite 2.1 ❌  
-- Custom `printer.cfg` ❌  
+- Draft `printer.cfg` written, not tested on the machine ❌  
 - Finish host setup with `fly-start` ❌  
 - Test functionality ❌  
 
@@ -129,7 +129,7 @@ This upgrade journey includes:
   - Before the first power-on, edit `fly-start.txt` on the `FLY-SETUP` volume (2.4 GHz Wi-Fi, locale, root password, sudo user). Steps: [Fly-bian Simple-AF how-to](https://github.com/0dysseusRex/fly-bian/blob/main/docs/howto-simpleaf.md)
   - Power the host from its own 5 V supply. Mellow says the Fly-Pi-lite2.1 must not be powered from the printer mainboard
   - Fit the IPEX antenna. Onboard Wi-Fi is 2.4 GHz only
-  - After SSH login, run `fly-start`. Printer and probe choices follow [Simple-AF for RPi](https://pellcorp.github.io/creality-wiki/rpi/); this repo does not ship a Geeetech M1 `printer.cfg`
+  - After SSH login, run `fly-start`. Printer and probe choices follow [Simple-AF for RPi](https://pellcorp.github.io/creality-wiki/rpi/). A first-draft [`printer.cfg`](printer.cfg) is in this repo; it is not calibrated
   - The SKR Pico stays the MCU and still connects over USB. No Fly Lite GPIO pinout is added here
   - Wire power and comms with care—use ferrules for safety and reliability
 
@@ -150,7 +150,7 @@ This upgrade journey includes:
 
 ## 🧠 Configuration Notes
 
-- Use a `printer.cfg` tailored for SKR Pico + Microprobe. The Fly Lite is the host; it does not replace the SKR Pico pinout
+- [`printer.cfg`](printer.cfg) is a draft for the SKR Pico MCU plus a BTT Microprobe. The Fly Lite 2.1 is the host. Its only documented Klipper GPIO is the KPPM pin, and this config does not load that pin. Leave [`adxl345.cfg`](adxl345.cfg) commented out until the USB accelerometer is plugged in
 - Run PID tuning for hotend and bed  
 - Enable Input Shaping with accelerometer (optional but recommended)  
 - View the camera stream in Fluidd or Mainsail on the Fly Lite
